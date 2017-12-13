@@ -20,15 +20,18 @@ def discriminanteGrado3(f):
 
 def grupoGaloisOrden3(f,K):
     F.<x>=K[]
-    if f.is_reducible():
-        F = list(f.factor())
-        grupoGaloisOrden2(F[1][0],K)
-    else:
+    if f.is_irreducible():
         g = x^2 -discriminanteGrado3(f)
-        if f.is_reducible():
-            print("El grupo de Galois es A3")
-        else:
+        if g.is_irreducible():
             print("El grupo de Galois es S3")
+        else:
+            print("El grupo de Galois es A3")
+    else:
+        F = list(f.factor())
+        if len(F)==1:
+            print("El grupo de Galois es S2\n")
+        else:
+            grupoGaloisOrden2(F[1][0],K)
 
 def mainOrden2():
     K = GF(2^3)
@@ -41,5 +44,4 @@ def mainOrden3():
     K = GF(2^3)
     F.<x>=K[]
     f = x^3+x^2+x+1
-    print(list(f.factor()))
-    discriminanteGrado3(f)
+    grupoGaloisOrden3(f,K)
