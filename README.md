@@ -4,3 +4,5 @@ Cálculo del grupo de Galois en cuerpos de característica distinta de 2 de poli
 ## Modo de uso
 Se tiene que descargar [SageMath](http://www.sagemath.org/) para su ejecución y se recomienda que se ejecute en modo gráfico con el comando `notebook()`.  
 Tras esto se importa el archivo Grupo-Galois.sws y listo.
+
+Si se prefiere usar el fichero python dado se debe ejecutar de la forma `/ruta/a/sage/sage -python /ruta/a/script/script.py`
