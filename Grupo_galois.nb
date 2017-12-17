@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2811,         94]
-NotebookOptionsPosition[      2297,         70]
-NotebookOutlinePosition[      2631,         85]
-CellTagsIndexPosition[      2588,         82]
+NotebookDataLength[      3288,        102]
+NotebookOptionsPosition[      2772,         78]
+NotebookOutlinePosition[      3106,         93]
+CellTagsIndexPosition[      3063,         90]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,37 +33,45 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"GrupoGalois2", "[", 
-    RowBox[{"f_", ",", "k_"}], "]"}], ":=", 
+    RowBox[{"f_", ",", " ", "k_"}], "]"}], " ", ":=", " ", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"IrreduciblePolynomialQ", "[", 
-      RowBox[{"f", ",", "k"}], "]"}], ",", "\[IndentingNewLine]", 
-     "\t\t\t\t\t\t", 
+      RowBox[{"f", ",", " ", "k"}], "]"}], ",", "\n", "   \t\t\t\t\t\t", 
      RowBox[{"Return", "[", "\"\<El grupo de Galois es S2\>\"", "]"}], ",", 
-     "\[IndentingNewLine]", "\t\t\t\t\t\t", 
+     "\n", "   \t\t\t\t\t\t", 
      RowBox[{"Return", "[", "\"\<El grupo de Galois es A2\>\"", "]"}]}], 
-    "]"}]}], ";"}]], "Input",
+    "]"}]}], ";"}]], "Code",
  CellChangeTimes->{{3.722538879572994*^9, 3.7225388894850817`*^9}, 
    3.722539214103167*^9, {3.722539430853158*^9, 3.722539430935561*^9}, {
    3.722539713379661*^9, 3.722539773158022*^9}, {3.7225398130556507`*^9, 
-   3.722539816765728*^9}, {3.722539881275628*^9, 3.722539955722982*^9}}],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.722539593300531*^9, 3.722539594387958*^9}}],
+   3.722539816765728*^9}, {3.722539881275628*^9, 3.722539955722982*^9}, {
+   3.7225402262412*^9, 3.722540233924514*^9}}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{"GrupoGalois2", "[", 
   RowBox[{
    RowBox[{
     RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
-   RowBox[{"Modulus", "\[Rule]", "2"}]}], "]"}]], "Input",
+   RowBox[{"Modulus", "\[Rule]", "2"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"GrupoGalois2", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
+   RowBox[{"Modulus", "\[Rule]", "3"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.722539959296348*^9, 3.7225399668548*^9}, {
-  3.722540074884316*^9, 3.722540110168962*^9}}],
+   3.722540074884316*^9, 3.722540110168962*^9}, 3.722540670291535*^9, {
+   3.7225411148199778`*^9, 3.722541133165935*^9}}],
 
 Cell[BoxData["\<\"El grupo de Galois es S2\"\>"], "Output",
- CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}}]
+ CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}, 
+   3.722540268853858*^9, {3.722541133544798*^9, 3.7225411391630297`*^9}}],
+
+Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Output",
+ CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}, 
+   3.722540268853858*^9, {3.722541133544798*^9, 3.722541139164691*^9}}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -88,11 +96,11 @@ Cell[CellGroupData[{
 Cell[580, 22, 178, 2, 93, "Title"],
 Cell[CellGroupData[{
 Cell[783, 28, 129, 1, 65, "Section"],
-Cell[915, 31, 796, 17, 83, "Input"],
-Cell[1714, 50, 92, 1, 30, "Input"],
+Cell[915, 31, 829, 17, 91, "Code"],
 Cell[CellGroupData[{
-Cell[1831, 55, 296, 7, 32, "Input"],
-Cell[2130, 64, 127, 1, 32, "Output"]
+Cell[1769, 52, 557, 13, 52, "Input"],
+Cell[2329, 67, 201, 2, 32, "Output"],
+Cell[2533, 71, 199, 2, 65, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
