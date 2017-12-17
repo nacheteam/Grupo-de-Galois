@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2811,         94]
+NotebookOptionsPosition[      2297,         70]
+NotebookOutlinePosition[      2631,         85]
+CellTagsIndexPosition[      2588,         82]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["C\[AAcute]lculo del Grupo de Galois",
+ Background->RGBColor[0.87, 0.94, 1]]], "Title",
+ CellChangeTimes->{{3.722539533913781*^9, 3.7225395916863956`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Grupo de Galois para polinomios de grado 2", "Section",
+ CellChangeTimes->{{3.7225396299289293`*^9, 3.722539697698765*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GrupoGalois2", "[", 
+    RowBox[{"f_", ",", "k_"}], "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"IrreduciblePolynomialQ", "[", 
+      RowBox[{"f", ",", "k"}], "]"}], ",", "\[IndentingNewLine]", 
+     "\t\t\t\t\t\t", 
+     RowBox[{"Return", "[", "\"\<El grupo de Galois es S2\>\"", "]"}], ",", 
+     "\[IndentingNewLine]", "\t\t\t\t\t\t", 
+     RowBox[{"Return", "[", "\"\<El grupo de Galois es A2\>\"", "]"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.722538879572994*^9, 3.7225388894850817`*^9}, 
+   3.722539214103167*^9, {3.722539430853158*^9, 3.722539430935561*^9}, {
+   3.722539713379661*^9, 3.722539773158022*^9}, {3.7225398130556507`*^9, 
+   3.722539816765728*^9}, {3.722539881275628*^9, 3.722539955722982*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.722539593300531*^9, 3.722539594387958*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GrupoGalois2", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
+   RowBox[{"Modulus", "\[Rule]", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.722539959296348*^9, 3.7225399668548*^9}, {
+  3.722540074884316*^9, 3.722540110168962*^9}}],
+
+Cell[BoxData["\<\"El grupo de Galois es S2\"\>"], "Output",
+ CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{928, 1028},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"11.0 para Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 178, 2, 93, "Title"],
+Cell[CellGroupData[{
+Cell[783, 28, 129, 1, 65, "Section"],
+Cell[915, 31, 796, 17, 83, "Input"],
+Cell[1714, 50, 92, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1831, 55, 296, 7, 32, "Input"],
+Cell[2130, 64, 127, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
