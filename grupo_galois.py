@@ -42,6 +42,12 @@ def mainOrden2():
 
 def mainOrden3():
     K = GF(2^3)
-    F.<x>=K[]
     f = x^3+x^2+x+1
     grupoGaloisOrden3(f,K)
+
+def main():
+    num = raw_input("Escoge el main que quieres ejecutar: ")
+    if num==2:
+        mainOrden2()
+    elif num==3:
+        mainOrden3()
