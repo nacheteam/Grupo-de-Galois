@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16608,        472]
-NotebookOptionsPosition[     15485,        428]
-NotebookOutlinePosition[     15820,        443]
-CellTagsIndexPosition[     15777,        440]
+NotebookDataLength[     19695,        565]
+NotebookOptionsPosition[     18351,        513]
+NotebookOutlinePosition[     18679,        528]
+CellTagsIndexPosition[     18636,        525]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -423,11 +423,96 @@ Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
    3.722686814953002*^9}]
 }, Open  ]]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Grupo de Galois para polinomios de grado 4", "Section",
+ CellChangeTimes->{{3.722711465522133*^9, 3.722711476209985*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ResolventeCubica", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"coefs", ",", "b0", ",", "b1", ",", "b2"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"coefs", "=", 
+       RowBox[{"CoefficientList", "[", 
+        RowBox[{"f", ",", "x"}], "]"}]}], ";", "\n", "\t\t\t\t\t\t\t", 
+      RowBox[{"b2", "=", 
+       RowBox[{"-", 
+        RowBox[{"coefs", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\n", "\t\t\t\t\t\t\t", 
+      RowBox[{"b1", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "*", 
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "4", "]"}], "]"}]}], "-", 
+        RowBox[{"4", "*", 
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}]}]}], ";", "\n", "\t\t\t\t\t\t\t", 
+      RowBox[{"b0", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox[
+           RowBox[{"coefs", "[", 
+            RowBox[{"[", "4", "]"}], "]"}], "2"]}], "*", 
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "+", 
+        RowBox[{"4", "*", 
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "*", 
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "-", 
+        SuperscriptBox[
+         RowBox[{"coefs", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "2"]}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{
+        SuperscriptBox["x", "3"], "+", 
+        RowBox[{"b2", "*", 
+         SuperscriptBox["x", "2"]}], "+", 
+        RowBox[{"b1", "*", "x"}], "+", "b0"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.722711484509028*^9, 3.7227115421283627`*^9}, {
+  3.722711572502029*^9, 3.722711616467927*^9}, {3.722711678850979*^9, 
+  3.722711704523776*^9}, {3.7227117513181763`*^9, 3.7227119572172117`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CoefficientList", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "4"}], "+", 
+    RowBox[{"2", 
+     RowBox[{"x", "^", "3"}]}], "+", 
+    RowBox[{"3", 
+     RowBox[{"x", "^", "2"}]}], "+", 
+    RowBox[{"4", "x"}], "+", "5"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7227115445172987`*^9, 3.7227115477566433`*^9}, {
+  3.72271163506706*^9, 3.7227116564365873`*^9}, {3.7227117188094177`*^9, 
+  3.722711733654009*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "4", ",", "3", ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{{3.722711643615597*^9, 3.7227116569575443`*^9}, {
+  3.72271173088037*^9, 3.722711734012867*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1855, 1056},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{928, 1028},
+WindowMargins->{{927, 0}, {0, Automatic}},
 FrontEndVersion->"11.0 para Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
@@ -471,6 +556,14 @@ Cell[CellGroupData[{
 Cell[15130, 416, 150, 2, 24, "Print"],
 Cell[15283, 420, 150, 2, 24, "Print"]
 }, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15494, 429, 127, 1, 65, "Section"],
+Cell[15624, 432, 1987, 54, 153, "Code"],
+Cell[CellGroupData[{
+Cell[17636, 490, 453, 12, 32, "Input"],
+Cell[18092, 504, 219, 4, 32, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
