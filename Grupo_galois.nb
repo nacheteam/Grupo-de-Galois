@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12453,        355]
-NotebookOptionsPosition[     11480,        316]
-NotebookOutlinePosition[     11815,        331]
-CellTagsIndexPosition[     11772,        328]
+NotebookDataLength[     16608,        472]
+NotebookOptionsPosition[     15485,        428]
+NotebookOutlinePosition[     15820,        443]
+CellTagsIndexPosition[     15777,        440]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32,7 +32,7 @@ Cell["Grupo de Galois para polinomios de grado 2", "Section",
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"GrupoGalois2", "[", 
+   RowBox[{"GrupoGalois2General", "[", 
     RowBox[{"f_", ",", " ", "k_"}], "]"}], " ", ":=", " ", 
    RowBox[{"If", "[", 
     RowBox[{
@@ -47,34 +47,47 @@ Cell[BoxData[
    3.722539713379661*^9, 3.722539773158022*^9}, {3.7225398130556507`*^9, 
    3.722539816765728*^9}, {3.722539881275628*^9, 3.722539955722982*^9}, {
    3.7225402262412*^9, 3.722540233924514*^9}, {3.722579517416235*^9, 
-   3.722579553469819*^9}}],
+   3.722579553469819*^9}, {3.72268628190036*^9, 3.722686282897053*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GrupoGalois2", "[", "f_", "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"IrreduciblePolynomialQ", "[", "f", "]"}], ",", "\n", 
+     "\t\t\t\t\t", 
+     RowBox[{"Print", "[", "\"\<El grupo de Galois es S2\>\"", "]"}], ",", 
+     "\n", "\t\t\t\t\t", 
+     RowBox[{"Print", "[", "\"\<El grupo de Galois es A2\>\"", "]"}]}], 
+    "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.7226863282986803`*^9, 3.7226864022625513`*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"GrupoGalois2", "[", 
   RowBox[{
-   RowBox[{
-    RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
-   RowBox[{"Modulus", "\[Rule]", "2"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{"GrupoGalois2", "[", 
   RowBox[{
-   RowBox[{
-    RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
-   RowBox[{"Modulus", "\[Rule]", "3"}]}], "]"}]}], "Input",
+   RowBox[{"x", "^", "2"}], "-", "1"}], "]"}]}], "Input",
  CellChangeTimes->{{3.722539959296348*^9, 3.7225399668548*^9}, {
    3.722540074884316*^9, 3.722540110168962*^9}, 3.722540670291535*^9, {
-   3.7225411148199778`*^9, 3.722541133165935*^9}}],
+   3.7225411148199778`*^9, 3.722541133165935*^9}, {3.72268641837269*^9, 
+   3.7226864455618763`*^9}}],
 
-Cell[BoxData["\<\"El grupo de Galois es S2\"\>"], "Output",
- CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}, 
-   3.722540268853858*^9, {3.722541133544798*^9, 3.7225411391630297`*^9}, 
-   3.722577151589521*^9}],
+Cell[CellGroupData[{
 
-Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Output",
- CellChangeTimes->{{3.7225401066121283`*^9, 3.722540110523213*^9}, 
-   3.722540268853858*^9, {3.722541133544798*^9, 3.7225411391630297`*^9}, 
-   3.722577151590683*^9}]
+Cell[BoxData["\<\"El grupo de Galois es S2\"\>"], "Print",
+ CellChangeTimes->{{3.722686430216036*^9, 3.722686445939207*^9}, {
+  3.7226865740774107`*^9, 3.722686596825781*^9}}],
+
+Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
+ CellChangeTimes->{{3.722686430216036*^9, 3.722686445939207*^9}, {
+  3.7226865740774107`*^9, 3.722686596826439*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -138,7 +151,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"ObtenerFactorBueno2", "[", 
+   RowBox[{"ObtenerFactorBueno2General", "[", 
     RowBox[{"f_", ",", "k_"}], "]"}], ":=", 
    RowBox[{"Module", "[", 
     RowBox[{
@@ -201,13 +214,79 @@ Cell[BoxData[
            RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "]"}]}]}], "]"}]}], 
   ";"}]], "Code",
  CellChangeTimes->{{3.722581278154601*^9, 3.722581286680128*^9}, {
-  3.722626191908411*^9, 3.722626411927176*^9}, {3.722626452436825*^9, 
-  3.722626464463718*^9}, {3.7226265367960453`*^9, 3.7226267552087507`*^9}}],
+   3.722626191908411*^9, 3.722626411927176*^9}, {3.722626452436825*^9, 
+   3.722626464463718*^9}, {3.7226265367960453`*^9, 3.7226267552087507`*^9}, 
+   3.722686307753727*^9}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"GrupoGalois3", "[", 
+   RowBox[{"ObtenerFactorBueno2", "[", "f_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", 
+       RowBox[{"mayor", "=", "1"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", "\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"factores", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "\[NotEqual]", "1"}], " ", 
+           "\[And]", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"factores", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ">", 
+            RowBox[{
+             RowBox[{"factores", "[", 
+              RowBox[{"[", "mayor", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}]}], ",", 
+          RowBox[{"mayor", "=", "i"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"factores", "[", 
+           RowBox[{"[", "mayor", "]"}], "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", "3"}], ",", "\n", 
+        "\t\t\t\t\t\t\t\t", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"factores", "[", 
+            RowBox[{"[", "mayor", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "]"}], ",", "\n", 
+        "\t\t\t\t\t\t\t\t", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"factores", "[", 
+            RowBox[{"[", "mayor", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "^", 
+          RowBox[{
+           RowBox[{"factores", "[", 
+            RowBox[{"[", "mayor", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.72268646592553*^9, 3.7226865145804043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GrupoGalois3General", "[", 
     RowBox[{"f_", ",", "k_", ",", "x_"}], "]"}], ":=", 
    RowBox[{"If", "[", 
     RowBox[{
@@ -233,19 +312,53 @@ Cell[BoxData[
         RowBox[{"factores", "=", 
          RowBox[{"FactorList", "[", 
           RowBox[{"f", ",", "k"}], "]"}]}], ";", "\n", "\t\t\t\t\t\t\t", 
-        RowBox[{"GrupoGalois2", "[", 
+        RowBox[{"GrupoGalois2General", "[", 
          RowBox[{
-          RowBox[{"ObtenerFactorBueno2", "[", 
+          RowBox[{"ObtenerFactorBueno2General", "[", 
            RowBox[{"f", ",", "k"}], "]"}], ",", "k"}], "]"}]}]}], "]"}]}], 
     "]"}]}], ";"}]], "Code",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQAWIQnd/I8d1+z2vHtrNWEg5A+t/n56ogemWlnx6ILngk
+1:eJxTTMoPSmViYGAQA2IQnd/I8d1+z2vHtrNWEg5A+t/n56ogemWlnx6ILngk
 ZwSiw+/om4JoPQMjGxAtZxptD6LvNTp7gWizTS+9QXSw8KYAEC2WEZcIoksY
 sjJB9Kodv7JB9JyzgmtBdMfle+vB5rPYbgPRH1bwbgfR+579PArmh/wH0z6d
 5X9BdJrEzX8gehJHBasjkH4WmywAos+YbjYA0UF16w1B9D39J/YgepkTrxOI
 Tq61bwHRG+MZ20D0nvLQ6SC63icSTG/sSlkMolcce3sMRJ9623kWRP/h5rsA
-os+tCAlyAtJN99vBdFnuyZsRQNqx4cpTEA0AGVmofw==
+os+tCAlyAtJN99vBdFnuyZsRQNqx4cpTEB25WOZtKZDu3bYLTH8rnMJdBqSF
+tdaDaQBaAbnj
   "]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GrupoGalois3", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"IrreduciblePolynomialQ", "[", "f", "]"}], ",", "\n", 
+     "\t\t\t\t\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"IrreduciblePolynomialQ", "[", 
+        RowBox[{
+         RowBox[{"x", "^", "2"}], "-", 
+         RowBox[{"Discriminant", "[", 
+          RowBox[{"f", ",", "x"}], "]"}]}], "]"}], ",", "\n", 
+       "\t\t\t\t\t\t\t", 
+       RowBox[{"Return", "[", "\"\<El grupo de Galois es S3\>\"", "]"}], ",", 
+       "\n", "\t\t\t\t\t\t\t", 
+       RowBox[{"Return", "[", "\"\<El grupo de Galois es A3\>\"", "]"}]}], 
+      "]"}], ",", "\n", "\t\t\t\t\t\t", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "factores", "}"}], ",", 
+       RowBox[{
+        RowBox[{"factores", "=", 
+         RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", "\t\t\t\t\t\t\t", 
+        RowBox[{"GrupoGalois2", "[", 
+         RowBox[{"ObtenerFactorBueno2", "[", "f", "]"}], "]"}]}]}], "]"}]}], 
+    "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.72268651651385*^9, 3.722686591152814*^9}, {
+  3.7226866481167793`*^9, 3.7226866488416452`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -255,23 +368,20 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"x", "^", "3"}], "+", 
     RowBox[{"2", 
-     RowBox[{"x", "^", "2"}]}], "+", "x", "+", "1"}], ",", 
-   RowBox[{"Modulus", "\[Rule]", "2"}], ",", "x"}], 
+     RowBox[{"x", "^", "2"}]}], "+", "x", "+", "1"}], ",", "x"}], 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"GrupoGalois3", "[", 
   RowBox[{
    RowBox[{
-    RowBox[{"x", "^", "3"}], "+", 
     RowBox[{"2", 
-     RowBox[{"x", "^", "2"}]}], "+", "x", "+", "1"}], ",", 
-   RowBox[{"Extension", "\[Rule]", "Automatic"}], ",", "x"}], 
-  "]"}], "\[IndentingNewLine]", 
+     RowBox[{"x", "^", "3"}]}], "-", 
+    RowBox[{"5", 
+     RowBox[{"x", "^", "2"}]}], "-", 
+    RowBox[{"2", "x"}], "-", "12"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"GrupoGalois3", "[", 
   RowBox[{
    RowBox[{
-    RowBox[{"x", "^", "3"}], "+", "1"}], ",", 
-   RowBox[{"Extension", "\[Rule]", 
-    RowBox[{"Sqrt", "[", "2", "]"}]}], ",", "x"}], 
+    RowBox[{"x", "^", "3"}], "-", "1"}], ",", "x"}], 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"GrupoGalois3", "[", 
   RowBox[{
@@ -283,32 +393,34 @@ Cell[BoxData[{
       RowBox[{"3", "x"}], "+", "1"}], ")"}], "*", 
     RowBox[{"(", 
      RowBox[{
-      RowBox[{"2", "x"}], "+", "1"}], ")"}]}], ",", 
-   RowBox[{"Extension", "\[Rule]", "Automatic"}], ",", "x"}], "]"}]}], "Input",\
-
+      RowBox[{"2", "x"}], "+", "1"}], ")"}]}], ",", "x"}], "]"}]}], "Input",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQBWIQfU9/qoTDnteObhd2KoFom2WxliD6S08bmNa48DMH
+1:eJxTTMoPSmViYGAQB2IQfU9/qoTDnteObhd2KoFom2WxliD6S08bmNa48DMH
 RG85I1gFontKeJtA9I8/z8B0dNz0GSBafF7ETBC9rfTbRhD9Vf75ZhBtcVdl
 B4hmjSvbBaK5DFbvB9EHbBccBtFqs5YcB9FVAYknQPRHq5RzIFrnpOsVEG34
 5tB9EF2/JOIRiE669eodiF51Wuc9iE67MPsLiI7ZcfU7iBa60O7nCKSdOioC
 QLTI34TLILq3IOQ6iLaalyjkBKQvBdWDad/JmuIg+luBDphetmNjMIj+vC4r
-DEQ7upVOAdFmL87PANEylczrIoC0YlrBBhCd+S/8BYgOPyvwF0QDAMcstRk=
-
+DEQ7upVOAdFmL87PANEylczrIoC0YlrBBhCd+S/8BYgOPyvwF0QH1JYIloHc
+dbheGUQL+Z7QBtElwZfBNABoxsTH
   "]],
 
-Cell[BoxData["\<\"El grupo de Galois es A3\"\>"], "Output",
- CellChangeTimes->{{3.7226270222883587`*^9, 3.7226270489556704`*^9}}],
+Cell[BoxData["\<\"El grupo de Galois es S3\"\>"], "Output",
+ CellChangeTimes->{{3.7226270222883587`*^9, 3.7226270489556704`*^9}, {
+   3.722686574158474*^9, 3.722686748201502*^9}, 3.722686814950482*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es S3\"\>"], "Output",
- CellChangeTimes->{{3.7226270222883587`*^9, 3.7226270489569197`*^9}}],
+ CellChangeTimes->{{3.7226270222883587`*^9, 3.7226270489556704`*^9}, {
+   3.722686574158474*^9, 3.722686748201502*^9}, 3.722686814951736*^9}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
- CellChangeTimes->{{3.722627022290668*^9, 3.722627048958016*^9}}],
+ CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
+   3.722686814952488*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
- CellChangeTimes->{{3.722627022290668*^9, 3.7226270489587803`*^9}}]
+ CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
+   3.722686814953002*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -334,25 +446,30 @@ Cell[CellGroupData[{
 Cell[580, 22, 178, 2, 93, "Title"],
 Cell[CellGroupData[{
 Cell[783, 28, 129, 1, 65, "Section"],
-Cell[915, 31, 877, 18, 91, "Code"],
+Cell[915, 31, 929, 18, 91, "Code"],
+Cell[1847, 51, 484, 12, 91, "Code"],
 Cell[CellGroupData[{
-Cell[1817, 53, 557, 13, 52, "Input"],
-Cell[2377, 68, 227, 3, 32, "Output"],
-Cell[2607, 73, 227, 3, 32, "Output"]
+Cell[2356, 67, 479, 11, 52, "Input"],
+Cell[CellGroupData[{
+Cell[2860, 82, 175, 2, 24, "Print"],
+Cell[3038, 86, 175, 2, 24, "Print"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2883, 82, 127, 1, 65, "Section"],
-Cell[3013, 85, 2177, 50, 129, "Code"],
-Cell[5193, 137, 2485, 67, 129, "Code"],
-Cell[7681, 206, 1654, 41, 148, "Code"],
+Cell[3274, 95, 127, 1, 65, "Section"],
+Cell[3404, 98, 2177, 50, 129, "Code"],
+Cell[5584, 150, 2520, 68, 129, "Code"],
+Cell[8107, 220, 2283, 63, 129, "Code"],
+Cell[10393, 285, 1704, 42, 148, "Code"],
+Cell[12100, 329, 1220, 31, 148, "Code"],
 Cell[CellGroupData[{
-Cell[9360, 251, 1526, 45, 104, "Input"],
-Cell[10889, 298, 129, 1, 32, "Output"],
-Cell[11021, 301, 129, 1, 32, "Output"],
+Cell[13345, 364, 1352, 40, 92, "Input"],
+Cell[14700, 406, 201, 2, 32, "Output"],
+Cell[14904, 410, 201, 2, 32, "Output"],
 Cell[CellGroupData[{
-Cell[11175, 306, 124, 1, 24, "Print"],
-Cell[11302, 309, 126, 1, 24, "Print"]
+Cell[15130, 416, 150, 2, 24, "Print"],
+Cell[15283, 420, 150, 2, 24, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
