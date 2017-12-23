@@ -1,6 +1,12 @@
 BeginPackage["GrupoGalois`"]
 
-GrupoGalois2General::usage = "Calcula el grupo de Galois de un polinomio de grado 2."
+GrupoGalois2General::usage = "Calcula el grupo de Galois de un polinomio de grado 2 en un cuerpo K de característica distinta de 2."
+GrupoGalois2::usage = "Calcula el grupo de Galois de un polinomio de grado 2 sobre Q."
+FactoresFormateados::usage = "Devuelve la lista de factores ordenados por grado."
+ObtenerFactorBueno2General::usage = "Devuelve el factor de grado 2 en el caso general."
+ObtenerFactorBueno2::usage = "Devuelve el factor de grado 2 en el caso de Q."
+GrupoGalois3General::usage = "Devuelve el grupo de Galois de un polinomio de grado 3 en un cuerpo k de característica distinta de 2."
+GrupoGalois3::usage = "Devuelve el grupo de Galois de un polinomio de grado 3 en el caso de Q."
 
 Begin["Privado`"]
 
