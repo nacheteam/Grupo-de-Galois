@@ -7,6 +7,8 @@ ObtenerFactorBueno2General::usage = "Devuelve el factor de grado 2 en el caso ge
 ObtenerFactorBueno2::usage = "Devuelve el factor de grado 2 en el caso de Q."
 GrupoGalois3General::usage = "Devuelve el grupo de Galois de un polinomio de grado 3 en un cuerpo k de característica distinta de 2."
 GrupoGalois3::usage = "Devuelve el grupo de Galois de un polinomio de grado 3 en el caso de Q."
+ResolventeCubica::usage = "Devuelve la resolvente cúbica de un polinomio de grado 4 en el caso de Q."
+CompruebaDescomposicionGrado3::usage = "Devuelve True si tiene un factor de grado 3 el polinomio dado (debe ser de grado 4)."
 
 Begin["Privado`"]
 
@@ -49,6 +51,18 @@ GrupoGalois3[f_,x_]:=If[IrreduciblePolynomialQ[f],
 							Return["El grupo de Galois es A3"]],
 						Module[{factores},factores=FactorList[f];
 						GrupoGalois2[ObtenerFactorBueno2[f]]]];
+
+
+ResolventeCubica[f_,x_]:=Module[{coefs,b0,b1,b2},coefs=CoefficientList[f,x];
+							b2=-coefs[[3]];
+							b1=coefs[[2]]*coefs[[4]]-4*coefs[[1]];
+						    b0=-coefs[[4]]^2*coefs[[1]]+4*coefs[[3]]*coefs[[1]]-coefs[[2]]^2;
+                    	    Return[x^3+b2*x^2+b1*x+b0]];
+
+CompruebaDescomposicionGrado3[f_,x_]:=Module[{factores,descomponeBien},factores=FactorList[f];
+    										descomponeBien=False;
+    										Do[If[Exponent[factores[[i]][[1]]^factores[[i]][[2]],x]==3,descomponeBien=True],{i,1,Length[factores]}];
+										    Return[descomponeBien]];
 
 End[]
 
