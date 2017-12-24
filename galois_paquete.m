@@ -164,4 +164,110 @@ GrupoGalois4[f_,x_]:=Module[{},If[CompruebaDescomposicionGrado3[f,x],
 (*GrupoGalois4[x^4+x^3+x^2+x+1,x]*)
 
 
+(* ::Section:: *)
+(*Grupo de Galois para polinomios de grado 5*)
+
+
+ComprobarUnaRaizGrado5[f_,x_]:=Module[{factores,condicion},factores=FactorList[f];
+								condicion=False;
+								Do[If[Exponent[factores[[i]][[1]],x]==1,condicion=True,],{i,1,Length[factores]}];
+								Return[condicion]];
+
+
+DevuelveFactorGrado4[f_,x_]:=Module[{factores,factorGrado1,factorGrado4},factores=FactorList[f];
+									Do[If[Exponent[factores[[i]][[1]],x]==1,factorGrado1=factores[[i]][[1]],],{i,1,Length[factores]}];
+									factorGrado4=Divide[f,factorGrado1];
+									Return[factorGrado4]];
+
+
+ComprobarDescomposicion2y3[f_,x_]:=Module[{factores,condicion1,condicion2},factores=FactorList[f];
+									condicion1=False;
+									condicion2=False;
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==2,condicion1=True,];
+										If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==3,condicion2=True,],{i,1,Length[factores]}];
+									Return[condicion1\[And]condicion2]];
+
+
+DevuelveFactorGrado2[f_,x_]:=Module[{factores,factorBueno},factores=FactorList[f];
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==2,factorBueno=Expand[factores[[i]][[1]]^factores[[i]][[2]]],],{i,1,Length[factores]}];
+									Return[factorBueno]];
+
+
+DevuelveFactorGrado3[f_,x_]:=Module[{factores,factorBueno},factores=FactorList[f];
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==3,factorBueno=Expand[factores[[i]][[1]]^factores[[i]][[2]]],],{i,1,Length[factores]}];
+									Return[factorBueno]];
+
+
+ComprobarProductoDiscriminantes[f_,x_]:=Module[{f1,f2},f1=DevuelveFactorGrado2[f,x];
+											f2=DevuelveFactorGrado3[f,x];
+											Return[IrreduciblePolynomialQ[x^2-Discriminant[f1,x]*Discriminant[f2,x]]]];
+
+
+ComprobarDiscriminante[f_,x_]:=Return[IrreduciblePolynomialQ[x^2-Discriminant[f,x]]];
+
+
+ComprobarDiscriminantef1[f_,x_]:=Return[IrreduciblePolynomialQ[x^2-Discriminant[DevuelveFactorGrado3[f,x],x]]];
+
+
+ComprobarFactor1alpha1[f_,x_]:=Module[{factores,soluciones,alpha1,condicion},soluciones=Solve[f==0,x];
+									alpha1=soluciones[[1]][[1]][[2]];
+									condicion=False;
+									factores=FactorList[f,Extension->alpha1];
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==4,condicion=True,],{i,1,Length[factores]}];
+									Return[condicion]];
+
+
+ComprobarDiscriminanteAlpha1Alpha2[f_,x_]:=Return[IrreduciblePolynomialQ[x^2-Discriminant[f,x],Extension->{Solve[f==0,x][[1]][[1]][[2]],Solve[f==0,x][[2]][[1]][[2]]}]];
+
+
+ComprobarDescomposicion2y3Alpha1[f_,x_]:=Module[{factores,condicion1,condicion2},factores=FactorList[f,Extension->Solve[f==0,x][[1]][[1]][[2]]];
+									condicion1=False;
+									condicion2=False;
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==2,condicion1=True,];
+										If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==3,condicion2=True,],{i,1,Length[factores]}];
+									Return[condicion1\[And]condicion2]];
+
+
+ComprobarDescomposicion1y2y2Alpha1[f_,x_]:=Module[{factores,condicion1,condicion2,condicion3,factor2},factores=FactorList[f,Extension->Solve[f==0,x][[1]][[1]][[2]]];
+									condicion1=False;
+									condicion2=False;
+									condicion3=False;
+									Do[If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==2,condicion1=True;factor2=Expand[factores[[i]][[1]]^factores[[i]][[2]]],];
+										If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==2\[And]factor2!=Expand[factores[[i]][[1]]^factores[[i]][[2]]],condicion3=True,];
+										If[Exponent[Expand[factores[[i]][[1]]^factores[[i]][[2]]],x]==3,condicion2=True,],{i,1,Length[factores]}];
+									Return[condicion1\[And]condicion2\[And]condicion3]];
+
+
+Comprobar5RaicesAlpha1[f_,x_]:=Module[{factores,condicion},factores=FactorList[f,Extension->Solve[f==0,x][[1]][[1]][[2]]];
+									condicion=True;
+									Do[If[Exponent[factores[[i]][[1]],x]!=1,condicion=False,],{i,1,Length[factores]}];
+									Return[condicion];
+									];
+
+
+GrupoGalois5[f_,x_]:=Module[{},If[ComprobarUnaRaizGrado5[f,x],
+									GrupoGalois4[DevuelveFactorGrado4[f,x],x],
+									If[ComprobarDescomposicion2y3[f,x],
+										If[ComprobarProductoDiscriminantes[f,x],
+											If[ComprobarDiscriminante[f,x],Print["El grupo de Galois de f es S3"],Print["No sabemos nada"]],
+											If[ComprobarDiscriminantef1[f,x],Print["El grupo de Galois de f es A3xS2"],Print["El grupo de Galois de f es S3xS2"]]],
+										If[ComprobarFactor1alpha1[f,x],
+											If[ComprobarDiscriminante[f,x],
+												Print["El grupo de Galois de f es A5"],
+												If[ComprobarDiscriminanteAlpha1Alpha2[f,x],
+													Print["El grupo de Galois de f es F20"],
+													Print["El grupo de Galois de f es S5"]]],
+											If[ComprobarDescomposicion1y2y2Alpha1[f,x]\[And]ComprobarDescomposicion2y3Alpha1[f,x],
+												Print["El grupo de Galois de f es D5"],
+												If[Comprobar5RaicesAlpha1[f,x],
+													Print["El grupo de Galois de f es C5"],
+													Print["No sabemos nada"]]]]]];
+							];
+
+
+(* ::Input:: *)
+(*GrupoGalois5[x^5+x^4+x^3+x^2+x+1,x]*)
+(*GrupoGalois5[Expand[(x-Pi)*(x-E)*(x^3+x^2+x+1)],x]*)
+
+
 

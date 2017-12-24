@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     43251,       1166]
-NotebookOptionsPosition[     41380,       1100]
-NotebookOutlinePosition[     41715,       1115]
-CellTagsIndexPosition[     41672,       1112]
+NotebookDataLength[     73941,       1978]
+NotebookOptionsPosition[     71224,       1888]
+NotebookOutlinePosition[     71559,       1903]
+CellTagsIndexPosition[     71516,       1900]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -83,12 +83,14 @@ Cell[CellGroupData[{
 Cell[BoxData["\<\"El grupo de Galois es S2\"\>"], "Print",
  CellChangeTimes->{{3.722686430216036*^9, 3.722686445939207*^9}, {
    3.7226865740774107`*^9, 3.722686596825781*^9}, 3.7231011964838877`*^9, 
-   3.72310165110487*^9, 3.723102410224415*^9, 3.723102736446869*^9}],
+   3.72310165110487*^9, 3.723102410224415*^9, 3.723102736446869*^9, 
+   3.7231188989438753`*^9, 3.723125074523939*^9, 3.723125585351849*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
  CellChangeTimes->{{3.722686430216036*^9, 3.722686445939207*^9}, {
    3.7226865740774107`*^9, 3.722686596825781*^9}, 3.7231011964838877`*^9, 
-   3.72310165110487*^9, 3.723102410224415*^9, 3.723102736447703*^9}]
+   3.72310165110487*^9, 3.723102410224415*^9, 3.723102736446869*^9, 
+   3.7231188989438753`*^9, 3.723125074523939*^9, 3.723125585352573*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -412,22 +414,26 @@ Cell[CellGroupData[{
 Cell[BoxData["\<\"El grupo de Galois es S3\"\>"], "Print",
  CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
    3.722686814952488*^9, 3.7231011971507177`*^9, 3.723101651496488*^9, 
-   3.723102410592196*^9, 3.723102736517177*^9}],
+   3.723102410592196*^9, 3.723102736517177*^9, 3.723118899324712*^9, 
+   3.723125074573653*^9, 3.723125585411786*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es S3\"\>"], "Print",
  CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
    3.722686814952488*^9, 3.7231011971507177`*^9, 3.723101651496488*^9, 
-   3.723102410592196*^9, 3.7231027365178423`*^9}],
+   3.723102410592196*^9, 3.723102736517177*^9, 3.723118899324712*^9, 
+   3.723125074573653*^9, 3.7231255854127398`*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
  CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
    3.722686814952488*^9, 3.7231011971507177`*^9, 3.723101651496488*^9, 
-   3.723102410592196*^9, 3.723102736518703*^9}],
+   3.723102410592196*^9, 3.723102736517177*^9, 3.723118899324712*^9, 
+   3.723125074573653*^9, 3.7231255854148197`*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois es A2\"\>"], "Print",
  CellChangeTimes->{{3.722686651139435*^9, 3.722686748203546*^9}, 
    3.722686814952488*^9, 3.7231011971507177`*^9, 3.723101651496488*^9, 
-   3.723102410592196*^9, 3.723102736519436*^9}]
+   3.723102410592196*^9, 3.723102736517177*^9, 3.723118899324712*^9, 
+   3.723125074573653*^9, 3.723125585415867*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1087,12 +1093,794 @@ Cell[CellGroupData[{
 
 Cell[BoxData["\<\"El grupo de Galois es <(12)(34)>\"\>"], "Print",
  CellChangeTimes->{
-  3.723102477463049*^9, {3.72310270492307*^9, 3.7231027782526217`*^9}}],
+  3.723102477463049*^9, {3.72310270492307*^9, 3.7231027782526217`*^9}, 
+   3.723118900202915*^9, 3.723125074672235*^9, 3.72312558555278*^9}],
 
 Cell[BoxData["\<\"El grupo de Galois de f es C4 y el de la resolvente es C2\"\
 \>"], "Print",
  CellChangeTimes->{
-  3.723102477463049*^9, {3.72310270492307*^9, 3.723102778253358*^9}}]
+  3.723102477463049*^9, {3.72310270492307*^9, 3.7231027782526217`*^9}, 
+   3.723118900202915*^9, 3.723125074672235*^9, 3.723125585574231*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Grupo de Galois para polinomios de grado 5", "Section",
+ CellChangeTimes->{{3.723118851977166*^9, 3.7231188669332542`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarUnaRaizGrado5", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "condicion"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", "\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "x"}], "]"}], "\[Equal]", 
+           "1"}], ",", 
+          RowBox[{"condicion", "=", "True"}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "condicion", "]"}]}]}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.723118871903914*^9, 3.7231190122112303`*^9}, {
+  3.723119061301816*^9, 3.7231191000848293`*^9}, {3.7231243107268333`*^9, 
+  3.723124312096539*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DevuelveFactorGrado4", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "factorGrado1", ",", "factorGrado4"}], "}"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "x"}], "]"}], "\[Equal]", 
+           "1"}], ",", 
+          RowBox[{"factorGrado1", "=", 
+           RowBox[{
+            RowBox[{"factores", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"factorGrado4", "=", 
+       RowBox[{"Divide", "[", 
+        RowBox[{"f", ",", "factorGrado1"}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "factorGrado4", "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.723119112815178*^9, 3.723119255069504*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDescomposicion2y3", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "condicion1", ",", "condicion2"}], "}"}], ",", 
+     
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion1", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion2", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "2"}], ",", 
+           RowBox[{"condicion1", "=", "True"}], ","}], "]"}], ";", "\n", 
+         "\t\t\t\t\t\t\t\t\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "3"}], ",", 
+           RowBox[{"condicion2", "=", "True"}], ","}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{"condicion1", "\[And]", "condicion2"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.723119258571766*^9, 3.723119294108753*^9}, {
+  3.723121899580188*^9, 3.7231220696583014`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DevuelveFactorGrado2", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "factorBueno"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{"Expand", "[", 
+              SuperscriptBox[
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], 
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+           "\[Equal]", "2"}], ",", 
+          RowBox[{"factorBueno", "=", 
+           RowBox[{"Expand", "[", 
+            SuperscriptBox[
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], 
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]], "]"}]}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "factorBueno", "]"}]}]}], "]"}]}], ";"}]], "Code",\
+
+ CellChangeTimes->{{3.723122306978806*^9, 3.723122396355652*^9}, {
+  3.72312261601581*^9, 3.723122623297615*^9}, {3.723122658202427*^9, 
+  3.723122692908751*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DevuelveFactorGrado3", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "factorBueno"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", "f", "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{"Expand", "[", 
+              SuperscriptBox[
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], 
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+           "\[Equal]", "3"}], ",", 
+          RowBox[{"factorBueno", "=", 
+           RowBox[{"Expand", "[", 
+            SuperscriptBox[
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], 
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]], "]"}]}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "factorBueno", "]"}]}]}], "]"}]}], ";"}]], "Code",\
+
+ CellChangeTimes->{{3.723122696466728*^9, 3.72312272940457*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarProductoDiscriminantes", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f1", ",", "f2"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"f1", "=", 
+       RowBox[{"DevuelveFactorGrado2", "[", 
+        RowBox[{"f", ",", "x"}], "]"}]}], ";", "\n", "\t\t\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"f2", "=", 
+       RowBox[{"DevuelveFactorGrado3", "[", 
+        RowBox[{"f", ",", "x"}], "]"}]}], ";", "\n", "\t\t\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{"IrreduciblePolynomialQ", "[", 
+        RowBox[{
+         SuperscriptBox["x", "2"], "-", 
+         RowBox[{
+          RowBox[{"Discriminant", "[", 
+           RowBox[{"f1", ",", "x"}], "]"}], "*", 
+          RowBox[{"Discriminant", "[", 
+           RowBox[{"f2", ",", "x"}], "]"}]}]}], "]"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.723122734129774*^9, 3.723122734417749*^9}, {
+  3.723122765823224*^9, 3.723122896288979*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDiscriminante", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Return", "[", 
+    RowBox[{"IrreduciblePolynomialQ", "[", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "-", 
+      RowBox[{"Discriminant", "[", 
+       RowBox[{"f", ",", "x"}], "]"}]}], "]"}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.723122885052458*^9, 3.723122885395502*^9}, {
+  3.723123038442981*^9, 3.7231230735546627`*^9}, {3.7231231904043427`*^9, 
+  3.7231232313410788`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDiscriminantef1", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Return", "[", 
+    RowBox[{"IrreduciblePolynomialQ", "[", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "-", 
+      RowBox[{"Discriminant", "[", 
+       RowBox[{
+        RowBox[{"DevuelveFactorGrado3", "[", 
+         RowBox[{"f", ",", "x"}], "]"}], ",", "x"}], "]"}]}], "]"}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.7231232384572277`*^9, 3.723123238709076*^9}, {
+  3.723123424166353*^9, 3.723123472972522*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarFactor1alpha1", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "factores", ",", "soluciones", ",", "alpha1", ",", "condicion"}], "}"}],
+      ",", 
+     RowBox[{
+      RowBox[{"soluciones", "=", 
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"alpha1", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"soluciones", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", 
+        RowBox[{"f", ",", 
+         RowBox[{"Extension", "\[Rule]", "alpha1"}]}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{"Expand", "[", 
+              SuperscriptBox[
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], 
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+           "\[Equal]", "4"}], ",", 
+          RowBox[{"condicion", "=", "True"}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "condicion", "]"}]}]}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.723123485032577*^9, 3.723123485172433*^9}, {
+   3.723123794713579*^9, 3.723124117249585*^9}, 3.723125408210967*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDiscriminanteAlpha1Alpha2", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Return", "[", 
+    RowBox[{"IrreduciblePolynomialQ", "[", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["x", "2"], "-", 
+       RowBox[{"Discriminant", "[", 
+        RowBox[{"f", ",", "x"}], "]"}]}], ",", 
+      RowBox[{"Extension", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Solve", "[", 
+             RowBox[{
+              RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Solve", "[", 
+             RowBox[{
+              RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}], "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}]}], "]"}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.7231241425767183`*^9, 3.723124195701414*^9}, {
+  3.7231242731006193`*^9, 3.7231242895895557`*^9}, {3.723124335724102*^9, 
+  3.723124347646652*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDescomposicion2y3Alpha1", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "condicion1", ",", "condicion2"}], "}"}], ",", 
+     
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", 
+        RowBox[{"f", ",", 
+         RowBox[{"Extension", "\[Rule]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Solve", "[", 
+              RowBox[{
+               RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion1", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion2", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "2"}], ",", 
+           RowBox[{"condicion1", "=", "True"}], ","}], "]"}], ";", "\n", 
+         "\t\t\t\t\t\t\t\t\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "3"}], ",", 
+           RowBox[{"condicion2", "=", "True"}], ","}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{"condicion1", "\[And]", "condicion2"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.723124457549087*^9, 3.723124493693039*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ComprobarDescomposicion1y2y2Alpha1", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "factores", ",", "condicion1", ",", "condicion2", ",", "condicion3", 
+       ",", "factor2"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", 
+        RowBox[{"f", ",", 
+         RowBox[{"Extension", "\[Rule]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Solve", "[", 
+              RowBox[{
+               RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion1", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion2", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion3", "=", "False"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "2"}], ",", 
+           RowBox[{
+            RowBox[{"condicion1", "=", "True"}], ";", 
+            RowBox[{"factor2", "=", 
+             RowBox[{"Expand", "[", 
+              SuperscriptBox[
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], 
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}]], "]"}]}]}], ","}], "]"}], ";",
+          "\n", "\t\t\t\t\t\t\t\t\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Exponent", "[", 
+              RowBox[{
+               RowBox[{"Expand", "[", 
+                SuperscriptBox[
+                 RowBox[{
+                  RowBox[{"factores", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], 
+                 RowBox[{
+                  RowBox[{"factores", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+             "\[Equal]", "2"}], "\[And]", 
+            RowBox[{"factor2", "\[NotEqual]", 
+             RowBox[{"Expand", "[", 
+              SuperscriptBox[
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], 
+               RowBox[{
+                RowBox[{"factores", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}]], "]"}]}]}], ",", 
+           RowBox[{"condicion3", "=", "True"}], ","}], "]"}], ";", "\n", 
+         "\t\t\t\t\t\t\t\t\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Exponent", "[", 
+             RowBox[{
+              RowBox[{"Expand", "[", 
+               SuperscriptBox[
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], 
+                RowBox[{
+                 RowBox[{"factores", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]], "]"}], ",", "x"}], "]"}], 
+            "\[Equal]", "3"}], ",", 
+           RowBox[{"condicion2", "=", "True"}], ","}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{"condicion1", "\[And]", "condicion2", "\[And]", "condicion3"}],
+        "]"}]}]}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.7231245103283854`*^9, 3.723124680424307*^9}, {
+  3.7231247460503397`*^9, 3.7231248004268503`*^9}, {3.7231255817703238`*^9, 
+  3.7231255827524433`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Comprobar5RaicesAlpha1", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"factores", ",", "condicion"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factores", "=", 
+       RowBox[{"FactorList", "[", 
+        RowBox[{"f", ",", 
+         RowBox[{"Extension", "\[Rule]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Solve", "[", 
+              RowBox[{
+               RowBox[{"f", "\[Equal]", "0"}], ",", "x"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], ";", "\n", 
+      "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"condicion", "=", "True"}], ";", "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exponent", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"factores", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "x"}], "]"}], 
+           "\[NotEqual]", "1"}], ",", 
+          RowBox[{"condicion", "=", "False"}], ","}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "factores", "]"}]}], "}"}]}], "]"}], ";", 
+      "\n", "\t\t\t\t\t\t\t\t\t", 
+      RowBox[{"Return", "[", "condicion", "]"}], ";"}]}], "\n", 
+    "\t\t\t\t\t\t\t\t\t", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.7231248125943747`*^9, 3.723125004735778*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GrupoGalois5", "[", 
+    RowBox[{"f_", ",", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ComprobarUnaRaizGrado5", "[", 
+         RowBox[{"f", ",", "x"}], "]"}], ",", "\n", "\t\t\t\t\t\t\t\t\t", 
+        RowBox[{"GrupoGalois4", "[", 
+         RowBox[{
+          RowBox[{"DevuelveFactorGrado4", "[", 
+           RowBox[{"f", ",", "x"}], "]"}], ",", "x"}], "]"}], ",", "\n", 
+        "\t\t\t\t\t\t\t\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"ComprobarDescomposicion2y3", "[", 
+           RowBox[{"f", ",", "x"}], "]"}], ",", "\n", "\t\t\t\t\t\t\t\t\t\t", 
+          
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"ComprobarProductoDiscriminantes", "[", 
+             RowBox[{"f", ",", "x"}], "]"}], ",", "\n", 
+            "\t\t\t\t\t\t\t\t\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"ComprobarDiscriminante", "[", 
+               RowBox[{"f", ",", "x"}], "]"}], ",", 
+              RowBox[{
+              "Print", "[", "\"\<El grupo de Galois de f es S3\>\"", "]"}], 
+              ",", 
+              RowBox[{"Print", "[", "\"\<No sabemos nada\>\"", "]"}]}], "]"}],
+             ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"ComprobarDiscriminantef1", "[", 
+               RowBox[{"f", ",", "x"}], "]"}], ",", 
+              RowBox[{
+              "Print", "[", "\"\<El grupo de Galois de f es A3xS2\>\"", "]"}],
+               ",", 
+              RowBox[{
+              "Print", "[", "\"\<El grupo de Galois de f es S3xS2\>\"", 
+               "]"}]}], "]"}]}], "]"}], ",", "\n", "\t\t\t\t\t\t\t\t\t\t", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"ComprobarFactor1alpha1", "[", 
+             RowBox[{"f", ",", "x"}], "]"}], ",", "\n", 
+            "\t\t\t\t\t\t\t\t\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"ComprobarDiscriminante", "[", 
+               RowBox[{"f", ",", "x"}], "]"}], ",", "\n", 
+              "\t\t\t\t\t\t\t\t\t\t\t\t", 
+              RowBox[{
+              "Print", "[", "\"\<El grupo de Galois de f es A5\>\"", "]"}], 
+              ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t\t", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"ComprobarDiscriminanteAlpha1Alpha2", "[", 
+                 RowBox[{"f", ",", "x"}], "]"}], ",", "\n", 
+                "\t\t\t\t\t\t\t\t\t\t\t\t\t", 
+                RowBox[{
+                "Print", "[", "\"\<El grupo de Galois de f es F20\>\"", "]"}],
+                 ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t\t\t", 
+                RowBox[{
+                "Print", "[", "\"\<El grupo de Galois de f es S5\>\"", 
+                 "]"}]}], "]"}]}], "]"}], ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ComprobarDescomposicion1y2y2Alpha1", "[", 
+                RowBox[{"f", ",", "x"}], "]"}], "\[And]", 
+               RowBox[{"ComprobarDescomposicion2y3Alpha1", "[", 
+                RowBox[{"f", ",", "x"}], "]"}]}], ",", "\n", 
+              "\t\t\t\t\t\t\t\t\t\t\t\t", 
+              RowBox[{
+              "Print", "[", "\"\<El grupo de Galois de f es D5\>\"", "]"}], 
+              ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t\t", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"Comprobar5RaicesAlpha1", "[", 
+                 RowBox[{"f", ",", "x"}], "]"}], ",", "\n", 
+                "\t\t\t\t\t\t\t\t\t\t\t\t\t", 
+                RowBox[{
+                "Print", "[", "\"\<El grupo de Galois de f es C5\>\"", "]"}], 
+                ",", "\n", "\t\t\t\t\t\t\t\t\t\t\t\t\t", 
+                RowBox[{"Print", "[", "\"\<No sabemos nada\>\"", "]"}]}], 
+               "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}], ";"}]}], "\n", 
+    "\t\t\t\t\t\t\t", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.723125015667942*^9, 3.723125342872939*^9}, {
+  3.723125385226201*^9, 3.723125660321398*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"GrupoGalois5", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "5"], "+", 
+    SuperscriptBox["x", "4"], "+", 
+    SuperscriptBox["x", "3"], "+", 
+    SuperscriptBox["x", "2"], "+", "x", "+", "1"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"GrupoGalois5", "[", 
+  RowBox[{
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "Pi"}], ")"}], "*", 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "\[ExponentialE]"}], ")"}], "*", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", 
+       SuperscriptBox["x", "2"], "+", "x", "+", "1"}], ")"}]}], "]"}], ",", 
+   "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.72311901643681*^9, 3.7231190538724527`*^9}, {
+  3.723124243092833*^9, 3.723124266205224*^9}, {3.7231256670336637`*^9, 
+  3.723125717381443*^9}, {3.723125751098764*^9, 3.723125762948935*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"El grupo de Galois es <(12)(34)>\"\>"], "Print",
+ CellChangeTimes->{3.7231256884351377`*^9, 3.723125764487767*^9}],
+
+Cell[BoxData["\<\"El grupo de Galois es <(12),(34)>\"\>"], "Print",
+ CellChangeTimes->{3.7231256884351377`*^9, 3.723125764488386*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1123,47 +1911,71 @@ Cell[1847, 51, 484, 12, 91, "Code"],
 Cell[CellGroupData[{
 Cell[2356, 67, 479, 11, 52, "Input"],
 Cell[CellGroupData[{
-Cell[2860, 82, 269, 3, 24, "Print"],
-Cell[3132, 87, 269, 3, 24, "Print"]
+Cell[2860, 82, 341, 4, 24, "Print"],
+Cell[3204, 88, 341, 4, 24, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3462, 97, 127, 1, 65, "Section"],
-Cell[3592, 100, 2177, 50, 129, "Code"],
-Cell[5772, 152, 2520, 68, 129, "Code"],
-Cell[8295, 222, 2283, 63, 129, "Code"],
-Cell[10581, 287, 1722, 42, 148, "Code"],
-Cell[12306, 331, 1269, 32, 148, "Code"],
+Cell[3606, 99, 127, 1, 65, "Section"],
+Cell[3736, 102, 2177, 50, 129, "Code"],
+Cell[5916, 154, 2520, 68, 129, "Code"],
+Cell[8439, 224, 2283, 63, 129, "Code"],
+Cell[10725, 289, 1722, 42, 148, "Code"],
+Cell[12450, 333, 1269, 32, 148, "Code"],
 Cell[CellGroupData[{
-Cell[13600, 367, 1352, 40, 92, "Input"],
+Cell[13744, 369, 1352, 40, 92, "Input"],
 Cell[CellGroupData[{
-Cell[14977, 411, 244, 3, 24, "Print"],
-Cell[15224, 416, 246, 3, 24, "Print"],
-Cell[15473, 421, 244, 3, 24, "Print"],
-Cell[15720, 426, 244, 3, 24, "Print"]
+Cell[15121, 413, 314, 4, 24, "Print"],
+Cell[15438, 419, 316, 4, 24, "Print"],
+Cell[15757, 425, 316, 4, 24, "Print"],
+Cell[16076, 431, 314, 4, 24, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16025, 436, 127, 1, 65, "Section"],
-Cell[16155, 439, 2036, 55, 153, "Code"],
-Cell[18194, 496, 1800, 44, 140, "Code"],
-Cell[19997, 542, 1936, 50, 121, "Code"],
-Cell[21936, 594, 1506, 40, 140, "Code"],
-Cell[23445, 636, 1788, 48, 121, "Code"],
-Cell[25236, 686, 1393, 35, 110, "Code"],
-Cell[26632, 723, 706, 18, 72, "Code"],
-Cell[27341, 743, 1030, 28, 91, "Code"],
-Cell[28374, 773, 945, 24, 91, "Code"],
-Cell[29322, 799, 3292, 80, 167, "Code"],
-Cell[32617, 881, 3652, 90, 204, "Code"],
-Cell[36272, 973, 3335, 76, 319, "Code"],
+Cell[16451, 442, 127, 1, 65, "Section"],
+Cell[16581, 445, 2036, 55, 153, "Code"],
+Cell[18620, 502, 1800, 44, 140, "Code"],
+Cell[20423, 548, 1936, 50, 121, "Code"],
+Cell[22362, 600, 1506, 40, 140, "Code"],
+Cell[23871, 642, 1788, 48, 121, "Code"],
+Cell[25662, 692, 1393, 35, 110, "Code"],
+Cell[27058, 729, 706, 18, 72, "Code"],
+Cell[27767, 749, 1030, 28, 91, "Code"],
+Cell[28800, 779, 945, 24, 91, "Code"],
+Cell[29748, 805, 3292, 80, 167, "Code"],
+Cell[33043, 887, 3652, 90, 204, "Code"],
+Cell[36698, 979, 3335, 76, 319, "Code"],
 Cell[CellGroupData[{
-Cell[39632, 1053, 1327, 30, 74, "Input"],
+Cell[40058, 1059, 1327, 30, 74, "Input"],
 Cell[CellGroupData[{
-Cell[40984, 1087, 158, 2, 24, "Print"],
-Cell[41145, 1091, 183, 3, 24, "Print"]
+Cell[41410, 1093, 227, 3, 24, "Print"],
+Cell[41640, 1098, 255, 4, 24, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41956, 1109, 129, 1, 65, "Section"],
+Cell[42088, 1112, 1306, 33, 109, "Code"],
+Cell[43397, 1147, 1482, 41, 110, "Code"],
+Cell[44882, 1190, 2428, 62, 189, "Code"],
+Cell[47313, 1254, 1881, 50, 121, "Code"],
+Cell[49197, 1306, 1783, 48, 121, "Code"],
+Cell[50983, 1356, 1044, 27, 110, "Code"],
+Cell[52030, 1385, 524, 13, 62, "Code"],
+Cell[52557, 1400, 559, 15, 62, "Code"],
+Cell[53119, 1417, 2120, 55, 177, "Code"],
+Cell[55242, 1474, 1311, 36, 62, "Code"],
+Cell[56556, 1512, 2787, 72, 189, "Code"],
+Cell[59346, 1586, 4757, 118, 239, "Code"],
+Cell[64106, 1706, 1662, 44, 128, "Code"],
+Cell[65771, 1752, 4195, 94, 376, "Code"],
+Cell[CellGroupData[{
+Cell[69991, 1850, 888, 24, 74, "Input"],
+Cell[CellGroupData[{
+Cell[70904, 1878, 132, 1, 24, "Print"],
+Cell[71039, 1881, 133, 1, 24, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
