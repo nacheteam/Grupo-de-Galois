@@ -391,6 +391,19 @@ Comprobar5RaicesAlpha1[f_,x_]:=Module[{factores,condicion},factores=FactorList[f
 									];
 
 
+CondicionFinal[f_,x_]:=Module[{alpha1,alpha2,factors,grades,aux,grade},alpha1=Root[f,1];
+								alpha2 = Root[f,2];
+								factors = FactorList[f,Extension->alpha1];
+								grades=Array[#-#&,4];
+								Do[
+								aux=factors[[i]][[1]];
+								grade=Exponent[aux,x];
+								grades[[grade]]=grades[[grade]]+1,
+								{i,1, Length[factors]}
+								];
+								Return[grades]];
+
+
 GrupoGalois5[f_,x_]:=Module[{},If[ComprobarUnaRaizGrado5[f,x],
 									GrupoGalois4[DevuelveFactorGrado4[f,x],x],
 									If[ComprobarDescomposicion2y3[f,x],
@@ -403,7 +416,7 @@ GrupoGalois5[f_,x_]:=Module[{},If[ComprobarUnaRaizGrado5[f,x],
 												If[ComprobarDiscriminanteAlpha1Alpha2[f,x],
 													Print["El grupo de Galois de f es F20"],
 													Print["El grupo de Galois de f es S5"]]],
-											If[ComprobarDescomposicion1y2y2Alpha1[f,x]\[Or]ComprobarDescomposicion2y3Alpha1[f,x],
+											If[ComprobarDescomposicion1y2y2Alpha1[f,x]\[Or]ComprobarDescomposicion2y3Alpha1[f,x]\[Or]CondicionFinal[f,x][[2]]==2\[Or]CondicionFinal[f,x][[2]]==1,
 												Print["El grupo de Galois de f es D5"],
 												If[!Comprobar5RaicesAlpha1[f,x],
 													Print["El grupo de Galois de f es C5"],
@@ -411,13 +424,70 @@ GrupoGalois5[f_,x_]:=Module[{},If[ComprobarUnaRaizGrado5[f,x],
 							];
 
 
+GrupoGalois5s[f_,x_]:=Module[{},If[ComprobarUnaRaizGrado5[f,x],
+									GrupoGalois4[DevuelveFactorGrado4[f,x],x],
+									If[ComprobarDescomposicion2y3[f,x],
+										If[ComprobarProductoDiscriminantes[f,x],
+											If[ComprobarDiscriminante[f,x],Print["El grupo de Galois de f es S3"],Print["No sabemos nada"]],
+											If[ComprobarDiscriminantef1[f,x],Print["El grupo de Galois de f es A3xS2"],Print["El grupo de Galois de f es S3xS2"]]],
+										If[IrreduciblePolynomialQ[f],
+											If[CondicionFinal[f,x][[4]]==1,
+												If[Element[Sqrt[Discriminant[f,x]],Rationals],
+													Print["El grupo de Galois es A5"],
+													If[IrreduciblePolynomialQ[x^2-Discriminant[f,x],Extension->{Root[f,1],Root[f,2]}],
+														Print["El grupo de Galois es S5"],
+														Print["El grupo de Galois es F20"]]],
+												If[CondicionFinal[f,x][[2]]==2\[Or]CondicionFinal[f,x][[2]]==1,
+													Print["El grupo de Galois es D5"],
+													Print["El grupo de Galois es C5"]]]]]]
+							];
+
+
 (* ::Input:: *)
 (*GrupoGalois5[x^5+x^2+1,x]*)
 (*GrupoGalois5[x^5+20x+16,x]*)
 (*GrupoGalois5[x^5+x^4-4x^3-3x^2+3x+1,x]*)
-(*FactorList[x^5-5x+12,Extension->Solve[x^5-5x+12==0,x][[1]][[1]][[2]]]*)
 (*GrupoGalois5[x^5-5x+12,x]*)
 (*GrupoGalois5[x^5-2,x]*)
 
 
+Galois[f_,x_]:=If[Exponent[f,x]==2,
+					GrupoGalois2[f],
+					If[Exponent[f,x]==3,
+						GrupoGalois3[f,x],
+						If[Exponent[f,x]==4,
+							GrupoGalois4[f,x],
+							If[Exponent[f,x]==5,
+								GrupoGalois5[f,x],
+								Print["El grado del polinomio es mayor que 5 o menor que 2."]]]]];
 
+
+(* ::Input:: *)
+(*Galois[x^5+x^2+1,x]*)
+(*Galois[x^5+20x+16,x]*)
+(*Galois[x^5+x^4-4x^3-3x^2+3x+1,x]*)
+(*Galois[x^5-5x+12,x]*)
+(*Galois[x^5-2,x]*)
+
+
+(* ::Input:: *)
+(*Galois[x^4-x-1,x]*)
+(*Galois[x^4+8x+12,x]*)
+(*Galois[x^4+3x+3,x]*)
+(*Galois[x^4-2,x]*)
+(*Galois[x^4-2x^2-2,x]*)
+(*Galois[x^4+36x+63,x]*)
+(*Galois[x^4-3x^2+4,x]*)
+
+
+(* ::Input:: *)
+(*Galois[x^3+2x^2+x+1,x]*)
+(*Galois[2x^3-5x^2-2x-12,x]*)
+(*Galois[x^3-1,x]*)
+(*Galois[(2x^2+3x+1)*(2x+1),x]*)
+(*Galois[x^3-2x^2-x+1,x]*)
+
+
+(* ::Input:: *)
+(*Galois[x^2+x+1,x]*)
+(*Galois[x^2-1,x]*)
